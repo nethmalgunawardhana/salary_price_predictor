@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Job Salary Predictor</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">Job SalaryPredictor</div>
+        <form action="/" method="POST">
+            <div class="form">
+                <div class="inputfield">
+                    <label for="company">Job Name</label>
+                    <div class = "custom_select">
+                        <select name="Jobtitle" id="Jobtitle">
+                            <option value="" selected hidden>Select</option>
+                            <option value="Data Analyst">Data Analyst</option>
+                            <option value="Graphic Designer">Graphic Designer</option>
+                            <option value="HR Manager">HR Manager</option>
+                            <option value="Sales Associate">Sales Associate</option>
+                            <option value="Senior Manager">Senior Manager</option>
+                            <option value="Social Media Manager">Social Media Manager</option>
+                            <option value="Software Engineer">Software Engineer</option>
+                            <option value="Web Developer">Web Developer</option>
+                           
+                        </select>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="age">Age</label>
+                    <input class="input" type="text" name="age" required>
+                </div>
+                <div class="inputfield">
+                    <label for="Years of Experience">Years of Experience </label>
+                    <input class="input" type="text" name="Years of Experience" required>
+                </div>
+                
+                <div class="inputfield">
+                    <label for="Gender">Gender</label>
+                    <div class = "custom_select">
+                        <select name="Gender" id="Gender">
+                            <option value="" selected hidden>Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select> 
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="Education Level">Education Level</label>           
+                    <div class = "custom_select">
+                        <select name="Education Level" id="Education Level">
+                            <option value="" selected hidden>Select</option>
+                            <option value="Bachelor's">Bachelor's</option>
+                            <option value="Master's">Master's</option>
+                            <option value="PhD">PhD</option>
+                            
+                        </select> 
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <input type="submit" class="btn" value=" predict Salary">
+                </div>
+
+           </div>
+        </form>
+    </div>     
+        <div class="result">
+            {% if pred != 0 %}
+            <p>Estimated Salary : LKR {{pred}}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
